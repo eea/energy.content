@@ -25,6 +25,8 @@ class IEnergyUnionMetadata(model.Schema):
         required=False,
         missing_value='',
         default='',
+        vocabulary='energy.resource_type'
+        # values=['Data', 'Briefing', 'Report', 'Indicator', ],
     )
     form.widget(
         'resource_type',

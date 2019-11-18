@@ -45,12 +45,12 @@
   <include package=".behaviors" />
 
   <utility
-    name="fise.topics"
+    name="energy.topics"
     component=".vocabulary.TopicsVocabularyFactory"
     />
 
   <utility
-    name="fise.resource_types"
+    name="energy.resource_types"
     component=".vocabulary.ResourceTypeVocabularyFactory"
     />
 
