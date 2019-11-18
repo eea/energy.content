@@ -1,9 +1,9 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="energy.content">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="energy.content">
 
   <i18n:registerTranslations directory="locales" />
 
@@ -18,31 +18,40 @@
   <include file="permissions.zcml" />
 
   <genericsetup:registerProfile
-      name="default"
-      title="energy.content"
-      directory="profiles/default"
-      description="Installs the energy.content add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
+    name="default"
+    title="energy.content"
+    directory="profiles/default"
+    description="Installs the energy.content add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.post_install"
+    />
 
   <genericsetup:registerProfile
-      name="uninstall"
-      title="energy.content (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the energy.content add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
+    name="uninstall"
+    title="energy.content (uninstall)"
+    directory="profiles/uninstall"
+    description="Uninstalls the energy.content add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.uninstall"
+    />
 
   <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="energy.content-hiddenprofiles"
-      />
+    factory=".setuphandlers.HiddenProfiles"
+    name="energy.content-hiddenprofiles"
+    />
 
-  <!-- -*- extra stuff goes here -*- -->
+    <!-- -*- extra stuff goes here -*- -->
 
-    <include package=".behaviors" />
+  <include package=".behaviors" />
 
+  <utility
+    name="fise.topics"
+    component=".vocabulary.TopicsVocabularyFactory"
+    />
+
+  <utility
+    name="fise.resource_types"
+    component=".vocabulary.ResourceTypeVocabularyFactory"
+    />
 
 </configure>

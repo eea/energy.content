@@ -1,28 +1,48 @@
 # -*- coding: utf-8 -*-
 
-from energy.content import _
 from plone import schema
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
+from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.dexterity.interfaces import IDexterityContent
+# from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
 from zope.component import adapter
-from zope.interface import Interface
 from zope.interface import implementer
+from zope.interface import Interface
 from zope.interface import provider
 
 
 class IEnergyUnionMetadataMarker(Interface):
     pass
 
+
 @provider(IFormFieldProvider)
 class IEnergyUnionMetadata(model.Schema):
     """
     """
-
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    resource_type = schema.Choice(
+        title=u"Resource Type",
         required=False,
+        missing_value='',
+        default='',
+    )
+    form.widget(
+        'resource_type',
+        AjaxSelectFieldWidget,
+        vocabulary='energy.resource_type'
+    )
+
+    topics = schema.Tuple(
+        title=u"Topics",
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+        default=(),
+    )
+    form.widget(
+        'topics',
+        AjaxSelectFieldWidget,
+        vocabulary='energy.topics'
     )
 
 
@@ -36,6 +56,7 @@ class EnergyUnionMetadata(object):
     def project(self):
         if hasattr(self.context, 'project'):
             return self.context.project
+
         return None
 
     @project.setter
