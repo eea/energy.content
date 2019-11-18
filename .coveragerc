@@ -1,0 +1,6 @@
+[report]
+include =
+    src/energy/*
+omit =
+    */test*
+    */upgrades/*
