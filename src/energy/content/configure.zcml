@@ -42,16 +42,9 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
+  <include file="vocabulary.zcml" />
+
   <include package=".behaviors" />
-
-  <utility
-    name="energy.topics"
-    component=".vocabulary.TopicsVocabularyFactory"
-    />
-
-  <utility
-    name="energy.resource_type"
-    component=".vocabulary.ResourceTypeVocabularyFactory"
-    />
+  <include package=".upgrades" />
 
 </configure>

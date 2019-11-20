@@ -1,0 +1,15 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="energy.content">
+
+  <genericsetup:upgradeStep
+    title="Create catalog indexes and metadata"
+    description=""
+    source="1000"
+    destination="1001"
+    handler=".to1001.import_catalog"
+    profile="energy.content:default"
+    />
+
+</configure>

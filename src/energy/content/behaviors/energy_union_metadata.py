@@ -20,18 +20,19 @@ class IEnergyUnionMetadataMarker(Interface):
 class IEnergyUnionMetadata(model.Schema):
     """
     """
+
     resource_type = schema.Choice(
         title=u"Resource Type",
         required=False,
         missing_value='',
         default='',
-        vocabulary='energy.resource_type'
-        # values=['Data', 'Briefing', 'Report', 'Indicator', ],
+        vocabulary='energy.resource_types',
+        # values=['', 'Data', 'Briefing', 'Report', 'Indicator', ],
     )
     form.widget(
         'resource_type',
         AjaxSelectFieldWidget,
-        vocabulary='energy.resource_type'
+        vocabulary='energy.resource_types',
     )
 
     topics = schema.Tuple(
