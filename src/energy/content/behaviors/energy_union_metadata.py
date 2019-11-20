@@ -29,9 +29,9 @@ class IEnergyUnionMetadata(model.Schema):
         # values=['Data', 'Briefing', 'Report', 'Indicator', ],
     )
     form.widget(
-        'resource_types',
+        'resource_type',
         AjaxSelectFieldWidget,
-        vocabulary='energy.resource_types'
+        vocabulary='energy.resource_type'
     )
 
     topics = schema.Tuple(

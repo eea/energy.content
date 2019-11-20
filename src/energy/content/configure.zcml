@@ -50,7 +50,7 @@
     />
 
   <utility
-    name="energy.resource_types"
+    name="energy.resource_type"
     component=".vocabulary.ResourceTypeVocabularyFactory"
     />
 
