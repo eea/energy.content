@@ -11,12 +11,11 @@
 
     <plone:behavior
         name="energy.content.energy_union_metadata"
-        title="EnergyUnionMetadata"
-        description="EnergyUnion generic metadata"
+        title="Energy Union Metadata"
+        description="Energy Union generic metadata"
         provides=".energy_union_metadata.IEnergyUnionMetadata"
         factory=".energy_union_metadata.EnergyUnionMetadata"
         marker=".energy_union_metadata.IEnergyUnionMetadataMarker"
         />
-
 
 </configure>
