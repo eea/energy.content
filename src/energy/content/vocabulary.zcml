@@ -13,8 +13,7 @@
 
   <utility
     name="energy.resource_types"
-    provides="zope.schema.interfaces.IVocabularyFactory"
-    component=".vocabulary.ResourceTypeVocabularyFactory"
+    component=".vocabulary.resource_types_vocabulary"
     />
 
 </configure>
