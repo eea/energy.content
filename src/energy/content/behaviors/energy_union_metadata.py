@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from plone import schema
+from plone.app.dexterity.behaviors.metadata import DCFieldProperty
+from plone.app.dexterity.behaviors.metadata import MetadataBase
 from plone.app.z3cform.widget import AjaxSelectFieldWidget
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
@@ -27,13 +29,7 @@ class IEnergyUnionMetadata(model.Schema):
         missing_value='',
         default='',
         vocabulary='energy.resource_types',
-        # values=['', 'Data', 'Briefing', 'Report', 'Indicator', ],
     )
-    # form.widget(
-    #     'resource_type',
-    #     AjaxSelectFieldWidget,
-    #     vocabulary='energy.resource_types',
-    # )
 
     topics = schema.Tuple(
         title=u"Topics",
@@ -51,17 +47,9 @@ class IEnergyUnionMetadata(model.Schema):
 
 @implementer(IEnergyUnionMetadata)
 @adapter(IEnergyUnionMetadataMarker)
-class EnergyUnionMetadata(object):
-    def __init__(self, context):
-        self.context = context
+class EnergyUnionMetadata(MetadataBase):
+    """ Metadata behavior implementation
+    """
 
-    @property
-    def project(self):
-        if hasattr(self.context, 'project'):
-            return self.context.project
-
-        return None
-
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    resource_type = DCFieldProperty(IEnergyUnionMetadata['resource_type'])
+    topics = DCFieldProperty(IEnergyUnionMetadata['topics'])
