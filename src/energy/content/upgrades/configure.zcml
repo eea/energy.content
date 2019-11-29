@@ -8,7 +8,16 @@
     description=""
     source="1000"
     destination="1001"
-    handler=".to1001.import_catalog"
+    handler=".to1001.run_upgrade"
+    profile="energy.content:default"
+    />
+
+  <genericsetup:upgradeStep
+    title="Import new field configuration"
+    description=""
+    source="*"
+    destination="1002"
+    handler=".to1002.run_upgrade"
     profile="energy.content:default"
     />
 
