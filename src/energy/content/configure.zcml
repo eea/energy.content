@@ -47,6 +47,7 @@
   <include package=".behaviors" />
   <include package=".upgrades" />
 
-  <adapter factory=".catalog.index_title" name="Title" />
+  <!-- <adapter factory=".catalog.index_title" name="Title" /> -->
+  <!-- <adapter factory=".catalog.index_topics" name="meta_topics" /> -->
 
 </configure>
