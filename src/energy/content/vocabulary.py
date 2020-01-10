@@ -32,7 +32,7 @@ def generic_vocabulary(_terms, sort=True):
     return factory
 
 
-TopicsVocabularyFactory = KeywordsVocabulary('topics')
+TopicsVocabularyFactory = KeywordsVocabulary('meta_topics')
 
 RESOURCE_TYPES = ['', 'Data', 'Briefing', 'Report', 'Indicator', ]
 

@@ -21,4 +21,13 @@
     profile="energy.content:default"
     />
 
+  <genericsetup:upgradeStep
+    title="Migrate topics storage"
+    description=""
+    source="*"
+    destination="1003"
+    handler=".to1003.run_upgrade"
+    profile="energy.content:default"
+    />
+
 </configure>
