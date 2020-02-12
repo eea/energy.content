@@ -31,7 +31,7 @@ class IEnergyUnionMetadata(model.Schema):
         vocabulary='energy.resource_types',
     )
 
-    topics = schema.Tuple(
+    meta_topics = schema.Tuple(
         title=u"Topics",
         value_type=schema.TextLine(),
         required=False,
@@ -39,7 +39,7 @@ class IEnergyUnionMetadata(model.Schema):
         default=(),
     )
     form.widget(
-        'topics',
+        'meta_topics',
         AjaxSelectFieldWidget,
         vocabulary='energy.topics'
     )
@@ -52,4 +52,4 @@ class EnergyUnionMetadata(MetadataBase):
     """
 
     resource_type = DCFieldProperty(IEnergyUnionMetadata['resource_type'])
-    topics = DCFieldProperty(IEnergyUnionMetadata['topics'])
+    meta_topics = DCFieldProperty(IEnergyUnionMetadata['meta_topics'])

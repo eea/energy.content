@@ -4,9 +4,9 @@
  <index name="resource_type" meta_type="KeywordIndex">
   <indexed_attr value="resource_type"/>
  </index>
- <index name="topics" meta_type="KeywordIndex">
-  <indexed_attr value="topics"/>
+ <index name="meta_topics" meta_type="KeywordIndex">
+  <indexed_attr value="meta_topics"/>
  </index>
  <column value="resource_type"/>
- <column value="topics"/>
+ <column value="meta_topics"/>
 </object>
