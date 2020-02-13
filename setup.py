@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Installer for the energy.content package."""
 
-import os
 from os.path import join
 
 from setuptools import find_packages
