@@ -5,6 +5,10 @@ from setuptools import find_packages
 from setuptools import setup
 
 
+NAME = 'energy.content'
+PATH = ['src'] + NAME.split('.') + ['version.txt']
+VERSION = open(os.path.join(*PATH)).read().strip()
+
 long_description = '\n\n'.join([
     open('README.rst').read(),
     open('CONTRIBUTORS.rst').read(),
@@ -13,9 +17,10 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='energy.content',
-    version='1.0a1',
+    name=NAME,
+    version=VERSION,
     description="EnergyUnion extensions for Plone",
+    long_description_content_type="text/x-rst",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
     classifiers=[
