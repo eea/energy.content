@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 """Installer for the energy.content package."""
 
+import os
+from os.path import join
+
 from setuptools import find_packages
 from setuptools import setup
 
 
 NAME = 'energy.content'
 PATH = ['src'] + NAME.split('.') + ['version.txt']
-VERSION = open(os.path.join(*PATH)).read().strip()
+VERSION = open(join(*PATH)).read().strip()
 
 long_description = '\n\n'.join([
     open('README.rst').read(),
