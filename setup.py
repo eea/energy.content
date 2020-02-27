@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Installer for the energy.content package."""
-
+""" Installer for the energy.content package.
+"""
 from os.path import join
-
 from setuptools import find_packages
 from setuptools import setup
 
@@ -14,7 +13,7 @@ VERSION = open(join(*PATH)).read().strip()
 long_description = '\n\n'.join([
     open('README.rst').read(),
     open('CONTRIBUTORS.rst').read(),
-    open('CHANGES.rst').read(),
+    open(join("docs", "HISTORY.txt")).read(),
 ])
 
 
