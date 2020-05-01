@@ -44,6 +44,7 @@ def locale_folder_setup():
 
 
 def _rebuild():
+    """_rebuild."""
     cmd = ('{i18ndude} rebuild-pot --pot {locale_path}/{domain}.pot --exclude '
            '{excludes} --create {domain} {target_path}'.format(
                i18ndude=i18ndude,

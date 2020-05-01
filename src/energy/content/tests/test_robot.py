@@ -5,7 +5,7 @@ import unittest
 import robotsuite
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
-from energy.content.testing import ENERGY_CONTENT_ACCEPTANCE_TESTING  # noqa: E501
+from energy.content.testing import ENERGY_CONTENT_ACCEPTANCE_TESTING
 
 
 def test_suite():
