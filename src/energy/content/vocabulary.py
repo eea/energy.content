@@ -1,3 +1,4 @@
+''' vocabulary module '''
 from plone.app.vocabularies.catalog import KeywordsVocabulary as KV
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -8,6 +9,8 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 @implementer(IVocabularyFactory)
 class KeywordsVocabulary(KV):
+    """KeywordsVocabulary."""
+
     def __init__(self, index):
         self.keyword_index = index
 
@@ -25,6 +28,10 @@ def generic_vocabulary(_terms, sort=True):
         _terms = sorted(_terms, key=lambda x: x[0])
 
     def factory(context):
+        """factory.
+
+        :param context:
+        """
         return SimpleVocabulary([
             SimpleTerm(n, n.encode('utf-8'), l) for n, l in _terms
         ])

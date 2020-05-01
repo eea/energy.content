@@ -1,14 +1,15 @@
+''' test robot '''
 # -*- coding: utf-8 -*-
-from energy.content.testing import ENERGY_CONTENT_ACCEPTANCE_TESTING  # noqa: E501
+import os
+import unittest
+import robotsuite
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
-
-import os
-import robotsuite
-import unittest
+from energy.content.testing import ENERGY_CONTENT_ACCEPTANCE_TESTING  # noqa: E501
 
 
 def test_suite():
+    """test_suite."""
     suite = unittest.TestSuite()
     current_dir = os.path.abspath(os.path.dirname(__file__))
     robot_dir = os.path.join(current_dir, 'robot')

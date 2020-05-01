@@ -1,13 +1,17 @@
-from plone import api
+''' upgrade to 1003 '''
+
 
 import logging
+from plone import api
 
 
 logger = logging.getLogger('energy.content')
 
 
 def run_upgrade(setup_context):
-    """
+    """run_upgrade.
+
+    :param setup_context:
     """
     setup_context.runImportStepFromProfile(
         "profile-energy.content:default",

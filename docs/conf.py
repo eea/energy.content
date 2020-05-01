@@ -1,3 +1,4 @@
+''' conf '''
 # -*- coding: utf-8 -*-
 #
 # This file is execfile()d with the current directory set to its
@@ -43,6 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'energy.content'
+# pylint: disable=redefined-builtin
 copyright = u'Tiberiu Ichim (tiberiuichim)'
 author = u'Tiberiu Ichim (tiberiuichim)'
 
