@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from energy.content.testing import ENERGY_CONTENT_INTEGRATION_TESTING  # noqa: E501
+import unittest
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-
-import unittest
+from energy.content.testing import ENERGY_CONTENT_INTEGRATION_TESTING
 
 
 try:
@@ -43,10 +42,12 @@ class TestSetup(unittest.TestCase):
 
 
 class TestUninstall(unittest.TestCase):
+    """TestUninstall."""
 
     layer = ENERGY_CONTENT_INTEGRATION_TESTING
 
     def setUp(self):
+        """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         if get_installer:
             self.installer = get_installer(self.portal, self.layer['request'])
