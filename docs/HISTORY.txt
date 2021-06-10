@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4-dev0 - (unreleased)
+1.4 - (2021-06-10)
 ---------------------------
 * Feature: patched metadatafields vocabulary from plone.app.vocabularies
   [alecghica refs #134167]
