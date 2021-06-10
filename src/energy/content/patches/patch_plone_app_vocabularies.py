@@ -34,7 +34,7 @@ _FIELD_LABEL_ENERGY = {
 def updated_metadatafields(self, context):
     cat = getToolByName(context, 'portal_catalog')
     items = [
-        SimpleTerm(column, column, _FIELD_LABEL_ENERGY[column] if  
+        SimpleTerm(column, column, _FIELD_LABEL_ENERGY[column] if
                                  column in _FIELD_LABEL_ENERGY else _(column))
         for column in cat.schema()
     ]
