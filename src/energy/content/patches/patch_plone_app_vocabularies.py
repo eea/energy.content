@@ -1,5 +1,10 @@
+# -*- coding: utf-8 -*-
 """ Patch for plone.app.vocabularies.metadatafields
 """
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone import PloneMessageFactory as _
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 _FIELD_LABEL_ENERGY = {
     'CreationDate': _('Created on'),
@@ -25,10 +30,12 @@ _FIELD_LABEL_ENERGY = {
     'meta_topics': _('Topics'),
 }
 
+
 def updated_metadatafields(self, context):
     cat = getToolByName(context, 'portal_catalog')
     items = [
-        SimpleTerm(column, column, _FIELD_LABEL_ENERGY[column] if column in _FIELD_LABEL_ENERGY else _(column))
+        SimpleTerm(column, column, _FIELD_LABEL_ENERGY[column] if  
+                                 column in _FIELD_LABEL_ENERGY else _(column))
         for column in cat.schema()
     ]
     return SimpleVocabulary(items)
