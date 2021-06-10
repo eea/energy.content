@@ -32,6 +32,8 @@ _FIELD_LABEL_ENERGY = {
 
 
 def updated_metadatafields(self, context):
+    """ patch for plone.app.vocabularies.metadatafields.__call__
+    """
     cat = getToolByName(context, 'portal_catalog')
     items = [
         SimpleTerm(column, column, _FIELD_LABEL_ENERGY[column] if
