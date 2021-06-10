@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:monkey="http://namespaces.plone.org/monkey"
+           i18n_domain="eea">
+
+	<include package="collective.monkeypatcher" />
+
+    <monkey:patch description="Update plone.app.vocabularies metadatafields vocabulary"
+                  class="plone.app.vocabularies.metadatafields.MetaDataFieldsVocabulary"
+                  original="__call__"
+                  replacement=".patches.patch_plone_app_vocabularies.updated_metadatafields" />
+
+</configure>

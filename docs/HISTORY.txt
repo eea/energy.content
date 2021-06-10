@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4 - (2021-06-10)
+---------------------------
+* Feature: patched metadatafields vocabulary from plone.app.vocabularies
+  [alecghica refs #134167]
+
 1.3 - (2020-05-13)
 ---------------------------
 * Change: Develop
