@@ -4,7 +4,7 @@ pipeline {
   environment {
         GIT_NAME = "energy.content"
         GIT_HISTORYFILE = "docs/HISTORY.txt"
-        SONARQUBE_TAGS = "demo-energy-union.eea.europa.eu"
+        SONARQUBE_TAGS = "climate-energy.eea.europa.eu"
     }
 
   stages {
