@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.6-dev0 - (unreleased)
+1.6 - (2023-08-31)
 ---------------------------
+* Change: Develop - remove python_requires pin to python 2.7
+  [valipod]
 
 1.5 - (2021-06-29)
 ---------------------------
